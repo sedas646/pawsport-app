@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('/fonts/Pacifico-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  src: url('/fonts/Lora-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-weight: 900;
+  src: url('/fonts/Lato-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DancingScript';
+  src: url('/fonts/DancingScript-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}

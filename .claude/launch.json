@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "uvicorn", "backend.main:app", "--host", "127.0.0.1", "--port", "8000", "--reload"],
+      "port": 8000,
+      "cwd": "C:\\Users\\aidas\\OneDrive\\Documents\\SEDA\\APP\\pawsport-app"
+    },
+    {
+      "name": "frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173,
+      "cwd": "C:\\Users\\aidas\\OneDrive\\Documents\\SEDA\\APP\\pawsport-app"
+    }
+  ]
+}

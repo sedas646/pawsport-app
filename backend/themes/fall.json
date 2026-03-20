@@ -1,0 +1,21 @@
+{
+  "name": "Fall",
+  "layout": "classic",
+  "background": { "type": "gradient", "top": [100, 40, 10], "bottom": [160, 80, 20] },
+  "background_texture": null,
+  "title_font": "Lato-Black",
+  "title_size": 118,
+  "title_color": [255, 235, 160],
+  "label_font": "Poppins-Bold",
+  "label_color": [255, 220, 150],
+  "value_font": "Poppins-Regular",
+  "value_color": [255, 240, 200],
+  "name_font": "Lora-Italic",
+  "name_color": [255, 255, 255],
+  "accent_color": [255, 180, 50],
+  "border_color": [255, 180, 80],
+  "decorations": "leaves",
+  "header_bg": [70, 25, 8, 215],
+  "footer_bg": [80, 30, 10, 220],
+  "footer_text_color": [255, 255, 255]
+}

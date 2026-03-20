@@ -1,0 +1,71 @@
+{
+  "name": "Spring",
+  "layout": "classic",
+  "background": {
+    "type": "gradient",
+    "top": [
+      34,
+      85,
+      34
+    ],
+    "bottom": [
+      60,
+      130,
+      60
+    ]
+  },
+  "background_texture": null,
+  "title_font": "Lato-Black",
+  "title_size": 118,
+  "title_color": [
+    255,
+    255,
+    255
+  ],
+  "label_font": "Poppins-Bold",
+  "label_color": [
+    255,
+    255,
+    180
+  ],
+  "value_font": "Poppins-Regular",
+  "value_color": [
+    255,
+    255,
+    230
+  ],
+  "name_font": "Lora-Italic",
+  "name_color": [
+    255,
+    255,
+    255
+  ],
+  "accent_color": [
+    255,
+    220,
+    100
+  ],
+  "border_color": [
+    200,
+    255,
+    150
+  ],
+  "decorations": "flowers",
+  "header_bg": [
+    18,
+    55,
+    18,
+    215
+  ],
+  "footer_bg": [
+    20,
+    60,
+    20,
+    220
+  ],
+  "footer_text_color": [
+    255,
+    255,
+    255
+  ]
+}

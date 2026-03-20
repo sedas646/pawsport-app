@@ -1,0 +1,21 @@
+{
+  "name": "Summer",
+  "layout": "classic",
+  "background": { "type": "gradient", "top": [20, 80, 160], "bottom": [10, 140, 200] },
+  "background_texture": null,
+  "title_font": "Lato-Black",
+  "title_size": 118,
+  "title_color": [255, 255, 120],
+  "label_font": "Poppins-Bold",
+  "label_color": [255, 255, 200],
+  "value_font": "Poppins-Regular",
+  "value_color": [240, 255, 255],
+  "name_font": "Lora-Italic",
+  "name_color": [255, 255, 255],
+  "accent_color": [255, 230, 50],
+  "border_color": [255, 230, 100],
+  "decorations": "none",
+  "header_bg": [10, 45, 110, 215],
+  "footer_bg": [10, 50, 120, 220],
+  "footer_text_color": [255, 255, 255]
+}
