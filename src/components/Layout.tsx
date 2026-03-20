@@ -4,6 +4,7 @@ const links = [
   { to: "/", label: "Dashboard" },
   { to: "/themes", label: "Theme Designer" },
   { to: "/settings", label: "Settings" },
+  { to: "/guide", label: "Guide" },
 ];
 
 export default function Layout() {

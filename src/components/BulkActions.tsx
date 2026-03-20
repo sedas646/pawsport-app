@@ -16,6 +16,8 @@ export default function BulkActions({ selectedDogs, selectedCount = 0, onSelectA
   const [generatingSelected, setGeneratingSelected] = useState(false);
   const [sending, setSending] = useState(false);
   const [result, setResult] = useState<{ zip_url?: string; message?: string } | null>(null);
+  const [showEmailForm, setShowEmailForm] = useState(false);
+  const [emailAddress, setEmailAddress] = useState("");
 
   const handleGenerateAll = async () => {
     setGenerating(true);
@@ -47,8 +49,11 @@ export default function BulkActions({ selectedDogs, selectedCount = 0, onSelectA
   const handleEmail = async () => {
     setSending(true);
     try {
-      const res = await sendEmail(result?.zip_url?.split("/").pop());
+      const recipient = emailAddress.trim() || undefined;
+      const res = await sendEmail(result?.zip_url?.split("/").pop(), recipient);
       setResult((r) => ({ ...r, message: `${r?.message} | Email sent to ${res.recipient}` }));
+      setShowEmailForm(false);
+      setEmailAddress("");
     } catch (e: any) {
       setResult((r) => ({ ...r, message: `${r?.message} | Email error: ${e.message}` }));
     } finally {
@@ -110,13 +115,38 @@ export default function BulkActions({ selectedDogs, selectedCount = 0, onSelectA
           >
             Download ZIP
           </a>
-          <button
-            onClick={handleEmail}
-            disabled={sending}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 rounded-lg text-sm font-medium text-white transition"
-          >
-            {sending ? "Sending..." : "Email ZIP"}
-          </button>
+          {!showEmailForm ? (
+            <button
+              onClick={() => setShowEmailForm(true)}
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm font-medium text-white transition"
+            >
+              Email ZIP
+            </button>
+          ) : (
+            <div className="flex items-center gap-2">
+              <input
+                type="email"
+                placeholder="Recipient email (leave blank for default)"
+                value={emailAddress}
+                onChange={(e) => setEmailAddress(e.target.value)}
+                className="px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-sm text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 w-64"
+                onKeyDown={(e) => e.key === "Enter" && handleEmail()}
+              />
+              <button
+                onClick={handleEmail}
+                disabled={sending}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 rounded-lg text-sm font-medium text-white transition"
+              >
+                {sending ? "Sending..." : "Send"}
+              </button>
+              <button
+                onClick={() => { setShowEmailForm(false); setEmailAddress(""); }}
+                className="px-2 py-2 text-slate-400 hover:text-white text-sm transition"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
         </>
       )}
 

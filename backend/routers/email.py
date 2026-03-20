@@ -37,16 +37,18 @@ def send_posters_email(body: dict = {}):
     with zipfile.ZipFile(zip_path) as zf:
         pet_count = len([n for n in zf.namelist() if n.endswith(".jpg")])
 
+    actual_recipient = body.get("recipient") or cfg["email_recipient"]
+
     result = send_email(
         zip_path=zip_path,
         gmail_user=cfg["gmail_user"],
         app_password=cfg["gmail_app_password"],
-        recipient=body.get("recipient", cfg["email_recipient"]),
+        recipient=actual_recipient,
         date_str=date_str,
         pet_count=pet_count,
     )
 
     if result["success"]:
-        return {"message": "Email sent successfully", "recipient": cfg["email_recipient"]}
+        return {"message": "Email sent successfully", "recipient": actual_recipient}
     else:
         raise HTTPException(500, f"Email failed: {result['error']}")

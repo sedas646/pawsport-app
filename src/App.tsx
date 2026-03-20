@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import EditPoster from "./pages/EditPoster";
 import ThemeDesignerPage from "./pages/ThemeDesignerPage";
 import Settings from "./pages/Settings";
+import UserGuide from "./pages/UserGuide";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="poster/:dogIndex" element={<EditPoster />} />
         <Route path="themes" element={<ThemeDesignerPage />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="guide" element={<UserGuide />} />
       </Route>
     </Routes>
   );

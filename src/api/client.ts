@@ -91,8 +91,8 @@ export const generateAllPosters = (
   });
 
 // Email
-export const sendEmail = (zipFilename?: string) =>
+export const sendEmail = (zipFilename?: string, recipient?: string) =>
   request<{ message: string; recipient: string }>("/api/email/send", {
     method: "POST",
-    body: JSON.stringify({ zip_filename: zipFilename }),
+    body: JSON.stringify({ zip_filename: zipFilename, ...(recipient ? { recipient } : {}) }),
   });
