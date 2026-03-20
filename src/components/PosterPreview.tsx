@@ -41,8 +41,6 @@ function bgStyle(theme: Theme): React.CSSProperties {
 }
 
 export default function PosterPreview({ dog, theme, scale = 0.35 }: Props) {
-  const layout = theme.layout || "classic";
-
   return (
     <div
       className="origin-top-left"
